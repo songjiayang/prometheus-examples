@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 10s
+scrape_configs:
+  - job_name: node_exporter
+    static_configs:
+{% for n in range(count) %}
+      - targets: ['host-node-{{n}}:9100']
+        labels:
+          host_number: cfg_{{n}}
+          role: node-exporter
+          env: prod
+{% endfor %}
