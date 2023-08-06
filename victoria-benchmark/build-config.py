@@ -20,7 +20,7 @@ def generate_hosts(count):
 
 
 def main():
-   total_count = 3400
+   total_count = 340
    generate_prometheus_config(total_count)
    generate_hosts(total_count)
     

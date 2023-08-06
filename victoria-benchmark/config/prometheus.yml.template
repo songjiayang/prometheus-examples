@@ -1,6 +1,13 @@
 global:
   scrape_interval: 10s
-scrape_configs:
+
+scrape_configs:  
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - cadvisor:8080   
+   
   - job_name: node_exporter
     static_configs:
 {% for n in range(count) %}

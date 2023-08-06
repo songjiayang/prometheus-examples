@@ -17,41 +17,52 @@ var (
 	cacheHeader        *http.Header
 	cacheMetrics       []byte
 	rw                 sync.RWMutex
+	client             *http.Client
 )
 
 func main() {
-	nodeExportEndpoint = os.Getenv("NODE_EXPORTER_ENDPOTINT")
+	nodeExportEndpoint = os.Getenv("NODE_EXPORTER_ENDPORINT")
 	if nodeExportEndpoint == "" {
-		nodeExportEndpoint = "node_exporter"
+		nodeExportEndpoint = "localhost"
+	}
+
+	tr := &http.Transport{
+		MaxIdleConns:       10,
+		IdleConnTimeout:    30 * time.Second,
+		DisableCompression: true,
+	}
+	client = &http.Client{
+		Transport: tr,
+		Timeout:   5 * time.Second,
 	}
 
 	http.HandleFunc("/metrics", func(w http.ResponseWriter, r *http.Request) {
 		rw.RLock()
+		defer rw.RUnlock()
+
 		for k, v := range *cacheHeader {
 			w.Header().Add(k, v[0])
 		}
 		w.Write(cacheMetrics)
 	})
 
-	go http.ListenAndServe(":8080", http.DefaultServeMux)
+	go http.ListenAndServe(":9100", http.DefaultServeMux)
 
 	sigs := make(chan os.Signal, 1)
 	done := make(chan struct{}, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
-	go syncNodeExporerData(sigs, done)
+	go syncNodeExporerMetrics(sigs, done)
 
 	<-done
 }
 
-func syncNodeExporerData(sigs chan os.Signal, done chan struct{}) {
-	ticker := time.NewTicker(10 * time.Second)
-
+func syncNodeExporerMetrics(sigs chan os.Signal, done chan struct{}) {
+	ticker := time.NewTicker(5 * time.Second)
 	for {
 		select {
 		case <-sigs:
 			log.Println("ticker stoping...")
 			done <- struct{}{}
-			time.Sleep(time.Second)
 		case <-ticker.C:
 			fetchAndUpdateData()
 		}
@@ -59,7 +70,8 @@ func syncNodeExporerData(sigs chan os.Signal, done chan struct{}) {
 }
 
 func fetchAndUpdateData() {
-	http.NewRequest(http.MethodGet, fmt.Sprintf("http://%s:9090/metrics", nodeExportEndpoint), nil)
+	req, _ := http.NewRequest(http.MethodGet, fmt.Sprintf("http://%s:9100/metrics", nodeExportEndpoint), nil)
+	resp, err := client.Do(req)
 	if err != nil {
 		log.Printf("fetch node exporter metrics with error: %v \n", err)
 		return

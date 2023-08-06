@@ -1,0 +1,2052 @@
+global:
+  scrape_interval: 10s
+
+scrape_configs:  
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - cadvisor:8080   
+   
+  - job_name: node_exporter
+    static_configs:
+
+      - targets: ['host-node-0:9100']
+        labels:
+          host_number: cfg_0
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-1:9100']
+        labels:
+          host_number: cfg_1
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-2:9100']
+        labels:
+          host_number: cfg_2
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-3:9100']
+        labels:
+          host_number: cfg_3
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-4:9100']
+        labels:
+          host_number: cfg_4
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-5:9100']
+        labels:
+          host_number: cfg_5
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-6:9100']
+        labels:
+          host_number: cfg_6
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-7:9100']
+        labels:
+          host_number: cfg_7
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-8:9100']
+        labels:
+          host_number: cfg_8
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-9:9100']
+        labels:
+          host_number: cfg_9
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-10:9100']
+        labels:
+          host_number: cfg_10
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-11:9100']
+        labels:
+          host_number: cfg_11
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-12:9100']
+        labels:
+          host_number: cfg_12
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-13:9100']
+        labels:
+          host_number: cfg_13
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-14:9100']
+        labels:
+          host_number: cfg_14
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-15:9100']
+        labels:
+          host_number: cfg_15
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-16:9100']
+        labels:
+          host_number: cfg_16
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-17:9100']
+        labels:
+          host_number: cfg_17
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-18:9100']
+        labels:
+          host_number: cfg_18
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-19:9100']
+        labels:
+          host_number: cfg_19
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-20:9100']
+        labels:
+          host_number: cfg_20
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-21:9100']
+        labels:
+          host_number: cfg_21
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-22:9100']
+        labels:
+          host_number: cfg_22
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-23:9100']
+        labels:
+          host_number: cfg_23
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-24:9100']
+        labels:
+          host_number: cfg_24
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-25:9100']
+        labels:
+          host_number: cfg_25
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-26:9100']
+        labels:
+          host_number: cfg_26
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-27:9100']
+        labels:
+          host_number: cfg_27
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-28:9100']
+        labels:
+          host_number: cfg_28
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-29:9100']
+        labels:
+          host_number: cfg_29
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-30:9100']
+        labels:
+          host_number: cfg_30
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-31:9100']
+        labels:
+          host_number: cfg_31
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-32:9100']
+        labels:
+          host_number: cfg_32
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-33:9100']
+        labels:
+          host_number: cfg_33
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-34:9100']
+        labels:
+          host_number: cfg_34
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-35:9100']
+        labels:
+          host_number: cfg_35
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-36:9100']
+        labels:
+          host_number: cfg_36
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-37:9100']
+        labels:
+          host_number: cfg_37
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-38:9100']
+        labels:
+          host_number: cfg_38
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-39:9100']
+        labels:
+          host_number: cfg_39
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-40:9100']
+        labels:
+          host_number: cfg_40
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-41:9100']
+        labels:
+          host_number: cfg_41
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-42:9100']
+        labels:
+          host_number: cfg_42
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-43:9100']
+        labels:
+          host_number: cfg_43
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-44:9100']
+        labels:
+          host_number: cfg_44
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-45:9100']
+        labels:
+          host_number: cfg_45
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-46:9100']
+        labels:
+          host_number: cfg_46
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-47:9100']
+        labels:
+          host_number: cfg_47
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-48:9100']
+        labels:
+          host_number: cfg_48
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-49:9100']
+        labels:
+          host_number: cfg_49
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-50:9100']
+        labels:
+          host_number: cfg_50
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-51:9100']
+        labels:
+          host_number: cfg_51
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-52:9100']
+        labels:
+          host_number: cfg_52
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-53:9100']
+        labels:
+          host_number: cfg_53
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-54:9100']
+        labels:
+          host_number: cfg_54
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-55:9100']
+        labels:
+          host_number: cfg_55
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-56:9100']
+        labels:
+          host_number: cfg_56
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-57:9100']
+        labels:
+          host_number: cfg_57
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-58:9100']
+        labels:
+          host_number: cfg_58
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-59:9100']
+        labels:
+          host_number: cfg_59
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-60:9100']
+        labels:
+          host_number: cfg_60
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-61:9100']
+        labels:
+          host_number: cfg_61
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-62:9100']
+        labels:
+          host_number: cfg_62
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-63:9100']
+        labels:
+          host_number: cfg_63
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-64:9100']
+        labels:
+          host_number: cfg_64
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-65:9100']
+        labels:
+          host_number: cfg_65
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-66:9100']
+        labels:
+          host_number: cfg_66
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-67:9100']
+        labels:
+          host_number: cfg_67
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-68:9100']
+        labels:
+          host_number: cfg_68
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-69:9100']
+        labels:
+          host_number: cfg_69
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-70:9100']
+        labels:
+          host_number: cfg_70
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-71:9100']
+        labels:
+          host_number: cfg_71
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-72:9100']
+        labels:
+          host_number: cfg_72
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-73:9100']
+        labels:
+          host_number: cfg_73
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-74:9100']
+        labels:
+          host_number: cfg_74
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-75:9100']
+        labels:
+          host_number: cfg_75
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-76:9100']
+        labels:
+          host_number: cfg_76
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-77:9100']
+        labels:
+          host_number: cfg_77
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-78:9100']
+        labels:
+          host_number: cfg_78
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-79:9100']
+        labels:
+          host_number: cfg_79
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-80:9100']
+        labels:
+          host_number: cfg_80
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-81:9100']
+        labels:
+          host_number: cfg_81
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-82:9100']
+        labels:
+          host_number: cfg_82
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-83:9100']
+        labels:
+          host_number: cfg_83
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-84:9100']
+        labels:
+          host_number: cfg_84
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-85:9100']
+        labels:
+          host_number: cfg_85
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-86:9100']
+        labels:
+          host_number: cfg_86
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-87:9100']
+        labels:
+          host_number: cfg_87
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-88:9100']
+        labels:
+          host_number: cfg_88
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-89:9100']
+        labels:
+          host_number: cfg_89
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-90:9100']
+        labels:
+          host_number: cfg_90
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-91:9100']
+        labels:
+          host_number: cfg_91
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-92:9100']
+        labels:
+          host_number: cfg_92
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-93:9100']
+        labels:
+          host_number: cfg_93
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-94:9100']
+        labels:
+          host_number: cfg_94
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-95:9100']
+        labels:
+          host_number: cfg_95
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-96:9100']
+        labels:
+          host_number: cfg_96
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-97:9100']
+        labels:
+          host_number: cfg_97
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-98:9100']
+        labels:
+          host_number: cfg_98
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-99:9100']
+        labels:
+          host_number: cfg_99
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-100:9100']
+        labels:
+          host_number: cfg_100
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-101:9100']
+        labels:
+          host_number: cfg_101
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-102:9100']
+        labels:
+          host_number: cfg_102
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-103:9100']
+        labels:
+          host_number: cfg_103
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-104:9100']
+        labels:
+          host_number: cfg_104
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-105:9100']
+        labels:
+          host_number: cfg_105
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-106:9100']
+        labels:
+          host_number: cfg_106
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-107:9100']
+        labels:
+          host_number: cfg_107
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-108:9100']
+        labels:
+          host_number: cfg_108
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-109:9100']
+        labels:
+          host_number: cfg_109
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-110:9100']
+        labels:
+          host_number: cfg_110
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-111:9100']
+        labels:
+          host_number: cfg_111
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-112:9100']
+        labels:
+          host_number: cfg_112
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-113:9100']
+        labels:
+          host_number: cfg_113
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-114:9100']
+        labels:
+          host_number: cfg_114
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-115:9100']
+        labels:
+          host_number: cfg_115
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-116:9100']
+        labels:
+          host_number: cfg_116
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-117:9100']
+        labels:
+          host_number: cfg_117
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-118:9100']
+        labels:
+          host_number: cfg_118
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-119:9100']
+        labels:
+          host_number: cfg_119
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-120:9100']
+        labels:
+          host_number: cfg_120
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-121:9100']
+        labels:
+          host_number: cfg_121
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-122:9100']
+        labels:
+          host_number: cfg_122
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-123:9100']
+        labels:
+          host_number: cfg_123
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-124:9100']
+        labels:
+          host_number: cfg_124
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-125:9100']
+        labels:
+          host_number: cfg_125
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-126:9100']
+        labels:
+          host_number: cfg_126
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-127:9100']
+        labels:
+          host_number: cfg_127
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-128:9100']
+        labels:
+          host_number: cfg_128
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-129:9100']
+        labels:
+          host_number: cfg_129
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-130:9100']
+        labels:
+          host_number: cfg_130
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-131:9100']
+        labels:
+          host_number: cfg_131
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-132:9100']
+        labels:
+          host_number: cfg_132
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-133:9100']
+        labels:
+          host_number: cfg_133
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-134:9100']
+        labels:
+          host_number: cfg_134
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-135:9100']
+        labels:
+          host_number: cfg_135
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-136:9100']
+        labels:
+          host_number: cfg_136
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-137:9100']
+        labels:
+          host_number: cfg_137
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-138:9100']
+        labels:
+          host_number: cfg_138
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-139:9100']
+        labels:
+          host_number: cfg_139
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-140:9100']
+        labels:
+          host_number: cfg_140
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-141:9100']
+        labels:
+          host_number: cfg_141
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-142:9100']
+        labels:
+          host_number: cfg_142
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-143:9100']
+        labels:
+          host_number: cfg_143
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-144:9100']
+        labels:
+          host_number: cfg_144
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-145:9100']
+        labels:
+          host_number: cfg_145
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-146:9100']
+        labels:
+          host_number: cfg_146
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-147:9100']
+        labels:
+          host_number: cfg_147
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-148:9100']
+        labels:
+          host_number: cfg_148
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-149:9100']
+        labels:
+          host_number: cfg_149
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-150:9100']
+        labels:
+          host_number: cfg_150
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-151:9100']
+        labels:
+          host_number: cfg_151
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-152:9100']
+        labels:
+          host_number: cfg_152
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-153:9100']
+        labels:
+          host_number: cfg_153
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-154:9100']
+        labels:
+          host_number: cfg_154
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-155:9100']
+        labels:
+          host_number: cfg_155
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-156:9100']
+        labels:
+          host_number: cfg_156
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-157:9100']
+        labels:
+          host_number: cfg_157
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-158:9100']
+        labels:
+          host_number: cfg_158
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-159:9100']
+        labels:
+          host_number: cfg_159
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-160:9100']
+        labels:
+          host_number: cfg_160
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-161:9100']
+        labels:
+          host_number: cfg_161
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-162:9100']
+        labels:
+          host_number: cfg_162
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-163:9100']
+        labels:
+          host_number: cfg_163
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-164:9100']
+        labels:
+          host_number: cfg_164
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-165:9100']
+        labels:
+          host_number: cfg_165
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-166:9100']
+        labels:
+          host_number: cfg_166
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-167:9100']
+        labels:
+          host_number: cfg_167
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-168:9100']
+        labels:
+          host_number: cfg_168
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-169:9100']
+        labels:
+          host_number: cfg_169
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-170:9100']
+        labels:
+          host_number: cfg_170
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-171:9100']
+        labels:
+          host_number: cfg_171
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-172:9100']
+        labels:
+          host_number: cfg_172
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-173:9100']
+        labels:
+          host_number: cfg_173
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-174:9100']
+        labels:
+          host_number: cfg_174
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-175:9100']
+        labels:
+          host_number: cfg_175
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-176:9100']
+        labels:
+          host_number: cfg_176
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-177:9100']
+        labels:
+          host_number: cfg_177
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-178:9100']
+        labels:
+          host_number: cfg_178
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-179:9100']
+        labels:
+          host_number: cfg_179
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-180:9100']
+        labels:
+          host_number: cfg_180
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-181:9100']
+        labels:
+          host_number: cfg_181
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-182:9100']
+        labels:
+          host_number: cfg_182
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-183:9100']
+        labels:
+          host_number: cfg_183
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-184:9100']
+        labels:
+          host_number: cfg_184
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-185:9100']
+        labels:
+          host_number: cfg_185
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-186:9100']
+        labels:
+          host_number: cfg_186
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-187:9100']
+        labels:
+          host_number: cfg_187
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-188:9100']
+        labels:
+          host_number: cfg_188
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-189:9100']
+        labels:
+          host_number: cfg_189
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-190:9100']
+        labels:
+          host_number: cfg_190
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-191:9100']
+        labels:
+          host_number: cfg_191
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-192:9100']
+        labels:
+          host_number: cfg_192
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-193:9100']
+        labels:
+          host_number: cfg_193
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-194:9100']
+        labels:
+          host_number: cfg_194
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-195:9100']
+        labels:
+          host_number: cfg_195
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-196:9100']
+        labels:
+          host_number: cfg_196
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-197:9100']
+        labels:
+          host_number: cfg_197
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-198:9100']
+        labels:
+          host_number: cfg_198
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-199:9100']
+        labels:
+          host_number: cfg_199
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-200:9100']
+        labels:
+          host_number: cfg_200
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-201:9100']
+        labels:
+          host_number: cfg_201
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-202:9100']
+        labels:
+          host_number: cfg_202
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-203:9100']
+        labels:
+          host_number: cfg_203
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-204:9100']
+        labels:
+          host_number: cfg_204
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-205:9100']
+        labels:
+          host_number: cfg_205
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-206:9100']
+        labels:
+          host_number: cfg_206
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-207:9100']
+        labels:
+          host_number: cfg_207
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-208:9100']
+        labels:
+          host_number: cfg_208
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-209:9100']
+        labels:
+          host_number: cfg_209
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-210:9100']
+        labels:
+          host_number: cfg_210
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-211:9100']
+        labels:
+          host_number: cfg_211
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-212:9100']
+        labels:
+          host_number: cfg_212
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-213:9100']
+        labels:
+          host_number: cfg_213
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-214:9100']
+        labels:
+          host_number: cfg_214
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-215:9100']
+        labels:
+          host_number: cfg_215
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-216:9100']
+        labels:
+          host_number: cfg_216
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-217:9100']
+        labels:
+          host_number: cfg_217
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-218:9100']
+        labels:
+          host_number: cfg_218
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-219:9100']
+        labels:
+          host_number: cfg_219
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-220:9100']
+        labels:
+          host_number: cfg_220
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-221:9100']
+        labels:
+          host_number: cfg_221
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-222:9100']
+        labels:
+          host_number: cfg_222
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-223:9100']
+        labels:
+          host_number: cfg_223
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-224:9100']
+        labels:
+          host_number: cfg_224
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-225:9100']
+        labels:
+          host_number: cfg_225
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-226:9100']
+        labels:
+          host_number: cfg_226
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-227:9100']
+        labels:
+          host_number: cfg_227
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-228:9100']
+        labels:
+          host_number: cfg_228
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-229:9100']
+        labels:
+          host_number: cfg_229
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-230:9100']
+        labels:
+          host_number: cfg_230
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-231:9100']
+        labels:
+          host_number: cfg_231
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-232:9100']
+        labels:
+          host_number: cfg_232
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-233:9100']
+        labels:
+          host_number: cfg_233
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-234:9100']
+        labels:
+          host_number: cfg_234
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-235:9100']
+        labels:
+          host_number: cfg_235
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-236:9100']
+        labels:
+          host_number: cfg_236
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-237:9100']
+        labels:
+          host_number: cfg_237
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-238:9100']
+        labels:
+          host_number: cfg_238
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-239:9100']
+        labels:
+          host_number: cfg_239
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-240:9100']
+        labels:
+          host_number: cfg_240
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-241:9100']
+        labels:
+          host_number: cfg_241
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-242:9100']
+        labels:
+          host_number: cfg_242
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-243:9100']
+        labels:
+          host_number: cfg_243
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-244:9100']
+        labels:
+          host_number: cfg_244
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-245:9100']
+        labels:
+          host_number: cfg_245
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-246:9100']
+        labels:
+          host_number: cfg_246
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-247:9100']
+        labels:
+          host_number: cfg_247
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-248:9100']
+        labels:
+          host_number: cfg_248
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-249:9100']
+        labels:
+          host_number: cfg_249
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-250:9100']
+        labels:
+          host_number: cfg_250
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-251:9100']
+        labels:
+          host_number: cfg_251
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-252:9100']
+        labels:
+          host_number: cfg_252
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-253:9100']
+        labels:
+          host_number: cfg_253
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-254:9100']
+        labels:
+          host_number: cfg_254
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-255:9100']
+        labels:
+          host_number: cfg_255
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-256:9100']
+        labels:
+          host_number: cfg_256
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-257:9100']
+        labels:
+          host_number: cfg_257
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-258:9100']
+        labels:
+          host_number: cfg_258
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-259:9100']
+        labels:
+          host_number: cfg_259
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-260:9100']
+        labels:
+          host_number: cfg_260
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-261:9100']
+        labels:
+          host_number: cfg_261
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-262:9100']
+        labels:
+          host_number: cfg_262
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-263:9100']
+        labels:
+          host_number: cfg_263
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-264:9100']
+        labels:
+          host_number: cfg_264
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-265:9100']
+        labels:
+          host_number: cfg_265
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-266:9100']
+        labels:
+          host_number: cfg_266
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-267:9100']
+        labels:
+          host_number: cfg_267
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-268:9100']
+        labels:
+          host_number: cfg_268
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-269:9100']
+        labels:
+          host_number: cfg_269
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-270:9100']
+        labels:
+          host_number: cfg_270
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-271:9100']
+        labels:
+          host_number: cfg_271
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-272:9100']
+        labels:
+          host_number: cfg_272
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-273:9100']
+        labels:
+          host_number: cfg_273
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-274:9100']
+        labels:
+          host_number: cfg_274
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-275:9100']
+        labels:
+          host_number: cfg_275
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-276:9100']
+        labels:
+          host_number: cfg_276
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-277:9100']
+        labels:
+          host_number: cfg_277
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-278:9100']
+        labels:
+          host_number: cfg_278
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-279:9100']
+        labels:
+          host_number: cfg_279
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-280:9100']
+        labels:
+          host_number: cfg_280
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-281:9100']
+        labels:
+          host_number: cfg_281
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-282:9100']
+        labels:
+          host_number: cfg_282
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-283:9100']
+        labels:
+          host_number: cfg_283
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-284:9100']
+        labels:
+          host_number: cfg_284
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-285:9100']
+        labels:
+          host_number: cfg_285
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-286:9100']
+        labels:
+          host_number: cfg_286
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-287:9100']
+        labels:
+          host_number: cfg_287
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-288:9100']
+        labels:
+          host_number: cfg_288
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-289:9100']
+        labels:
+          host_number: cfg_289
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-290:9100']
+        labels:
+          host_number: cfg_290
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-291:9100']
+        labels:
+          host_number: cfg_291
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-292:9100']
+        labels:
+          host_number: cfg_292
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-293:9100']
+        labels:
+          host_number: cfg_293
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-294:9100']
+        labels:
+          host_number: cfg_294
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-295:9100']
+        labels:
+          host_number: cfg_295
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-296:9100']
+        labels:
+          host_number: cfg_296
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-297:9100']
+        labels:
+          host_number: cfg_297
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-298:9100']
+        labels:
+          host_number: cfg_298
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-299:9100']
+        labels:
+          host_number: cfg_299
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-300:9100']
+        labels:
+          host_number: cfg_300
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-301:9100']
+        labels:
+          host_number: cfg_301
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-302:9100']
+        labels:
+          host_number: cfg_302
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-303:9100']
+        labels:
+          host_number: cfg_303
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-304:9100']
+        labels:
+          host_number: cfg_304
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-305:9100']
+        labels:
+          host_number: cfg_305
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-306:9100']
+        labels:
+          host_number: cfg_306
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-307:9100']
+        labels:
+          host_number: cfg_307
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-308:9100']
+        labels:
+          host_number: cfg_308
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-309:9100']
+        labels:
+          host_number: cfg_309
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-310:9100']
+        labels:
+          host_number: cfg_310
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-311:9100']
+        labels:
+          host_number: cfg_311
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-312:9100']
+        labels:
+          host_number: cfg_312
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-313:9100']
+        labels:
+          host_number: cfg_313
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-314:9100']
+        labels:
+          host_number: cfg_314
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-315:9100']
+        labels:
+          host_number: cfg_315
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-316:9100']
+        labels:
+          host_number: cfg_316
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-317:9100']
+        labels:
+          host_number: cfg_317
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-318:9100']
+        labels:
+          host_number: cfg_318
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-319:9100']
+        labels:
+          host_number: cfg_319
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-320:9100']
+        labels:
+          host_number: cfg_320
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-321:9100']
+        labels:
+          host_number: cfg_321
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-322:9100']
+        labels:
+          host_number: cfg_322
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-323:9100']
+        labels:
+          host_number: cfg_323
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-324:9100']
+        labels:
+          host_number: cfg_324
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-325:9100']
+        labels:
+          host_number: cfg_325
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-326:9100']
+        labels:
+          host_number: cfg_326
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-327:9100']
+        labels:
+          host_number: cfg_327
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-328:9100']
+        labels:
+          host_number: cfg_328
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-329:9100']
+        labels:
+          host_number: cfg_329
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-330:9100']
+        labels:
+          host_number: cfg_330
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-331:9100']
+        labels:
+          host_number: cfg_331
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-332:9100']
+        labels:
+          host_number: cfg_332
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-333:9100']
+        labels:
+          host_number: cfg_333
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-334:9100']
+        labels:
+          host_number: cfg_334
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-335:9100']
+        labels:
+          host_number: cfg_335
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-336:9100']
+        labels:
+          host_number: cfg_336
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-337:9100']
+        labels:
+          host_number: cfg_337
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-338:9100']
+        labels:
+          host_number: cfg_338
+          role: node-exporter
+          env: prod
+
+      - targets: ['host-node-339:9100']
+        labels:
+          host_number: cfg_339
+          role: node-exporter
+          env: prod
