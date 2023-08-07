@@ -1,12 +1,7 @@
 version: '3.3'
 services:
-  node-exporter: 
-    image: prom/node-exporter:v1.6.1
-    ports:
-      - "9100:9100"
-
   node-exporter-proxy:
-    image: songjiayang/node-exporter-proxy:0.0.1
+    image: songjiayang/node-exporter-proxy:0.1.0
     environment:
       - NODE_EXPORTER_ENDPORINT=node-exporter
     ports:
@@ -14,6 +9,18 @@ services:
     networks:
       default:
         ipv4_address: 10.5.0.2
+  
+  node-exporter: 
+    image: prom/node-exporter:v1.6.1
+    command: 
+      - --path.rootfs=/host
+    ports:
+      - "9100:9100"
+    volumes:
+      - /:/host:ro,rslave
+    networks:
+      default:
+        ipv4_address: 10.5.0.3
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -22,8 +29,15 @@ services:
       - /var/run:/var/run:ro
       - /sys:/sys:ro 
       - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk:/dev/disk:ro
+    devices:
+      - "/dev/kmsg:/dev/kmsg"
+    privileged: true
     ports:
       - "8080:8080"
+    networks:
+      default:
+        ipv4_address: 10.5.0.4
       
   prometheus: 
     image: prom/prometheus:main
@@ -33,30 +47,14 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
       - --storage.tsdb.path=/prometheus
     volumes:
-      - prometheus-data:/prometheus
+      - /prometheus:/prometheus
       - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./config/hosts:/etc/hosts
-    networks:
-      - default
     depends_on:
       - node-exporter-proxy
-
-  prometheus-nowal: 
-    image: prom/prometheus:main
-    ports:
-      - "9091:9090"
-    command:
-      - --config.file=/etc/prometheus/prometheus.yml
-      - --storage.tsdb.path=/prometheus
-      - --storage.tsdb.wal-segment-size=-1MB
-    volumes:
-      - prometheus-nowal-data:/prometheus
-      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./config/hosts:/etc/hosts
     networks:
-      - default
-    depends_on:
-      - node-exporter-proxy
+      default:
+        ipv4_address: 10.5.0.5
 
   victoria-metrics:
     image: victoriametrics/victoria-metrics:v1.92.1
@@ -65,19 +63,35 @@ services:
     command: 
       - -promscrape.config=/path/to/prometheus.yml
     volumes:
-      - victoria-metrics-data:/path/to/victoria-metrics-data
+      - /victoria-metrics-data:/victoria-metrics-data
       - ./config/prometheus.yml:/path/to/prometheus.yml
       - ./config/hosts:/etc/hosts
     networks:
-      - default
+      default:
+        ipv4_address: 10.5.0.7
     depends_on:
       - node-exporter-proxy
-      
-volumes:
-  prometheus-data:
-  prometheus-nowal-data:
-  victoria-metrics-data:
-
+  
+  grafana:
+    image: grafana/grafana:9.5.7
+    pull_policy: always
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_USERS_DEFAULT_THEME=light
+      - GF_LOG_MODE=console
+      - GF_LOG_LEVEL=critical
+    ports:
+      - 3000:3000
+    depends_on:
+      - prometheus
+    networks:
+      default:
+        ipv4_address: 10.5.0.8
+    volumes:
+      - ./config/grafana-provisioning-dashboards.yaml:/etc/grafana/provisioning/dashboards/provisioning-dashboards.yaml:ro
+      - ./config/grafana-provisioning-datasources.yaml:/etc/grafana/provisioning/datasources/provisioning-datasources.yaml:ro      
+      - ./config/dashboards:/var/lib/grafana/dashboards:ro
 networks:
   default:
     driver: bridge
