@@ -18,7 +18,7 @@ func main() {
 	reg.MustRegister(requestsTotal)
 
 	go func() {
-		// 模拟程序运行一段时间后 500 徒增到 10，然后保持稳定不变
+		// 模拟程序运行一段时间后 500 状态吗请求突增到 10，然后保持不变
 		time.Sleep(10 * time.Second)
 		requestsTotal.WithLabelValues("500").Add(10)
 	}()
