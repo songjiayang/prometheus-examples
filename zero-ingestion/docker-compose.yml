@@ -1,0 +1,42 @@
+version: '3.3'
+services:
+  prometheus: 
+    image: prom/prometheus:v2.50.0-rc.1
+    restart: always
+    ports:
+      - "9090:9090"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --enable-feature=created-timestamp-zero-ingestion
+    volumes:
+      - prometheus-data:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/rules.yml:/etc/prometheus/rules.yml
+    depends_on:
+      - zero-ingestion
+
+  prometheus2: 
+    image: prom/prometheus:v2.50.0-rc.1
+    restart: always
+    ports:
+      - "9091:9090"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+    volumes:
+      - prometheus-data2:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/rules.yml:/etc/prometheus/rules.yml
+    depends_on:
+      - zero-ingestion
+
+  zero-ingestion:
+    image: songjiayang/zero-ingestion:0.0.1
+    ports:
+      - "8080:8080"
+      
+volumes:
+  prometheus-data:
+  prometheus-data2:
+

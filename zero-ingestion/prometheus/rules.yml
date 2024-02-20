@@ -1,0 +1,9 @@
+groups:
+- name: example
+  rules:
+  - alert: TooManyErrorRequests
+    expr: rate(http_requests_total{code="500"}[1m]) > 0.1
+    labels:
+      severity: page
+    annotations:
+      summary: Too many error requests
