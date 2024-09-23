@@ -16,7 +16,7 @@ import (
 	api "go.opentelemetry.io/otel/metric"
 	"go.opentelemetry.io/otel/sdk/metric"
 	"go.opentelemetry.io/otel/sdk/resource"
-	semconv "go.opentelemetry.io/otel/semconv/v1.17.0"
+	semconv "go.opentelemetry.io/otel/semconv/v1.26.0"
 )
 
 func init() {
@@ -47,8 +47,8 @@ func initMeter() *metric.MeterProvider {
 	ctx := context.Background()
 	res, _ := resource.New(ctx,
 		resource.WithAttributes(
-			semconv.ServiceName("service1"),
 			semconv.ServiceNamespace("staging"),
+			semconv.ServiceName("service1"),
 			semconv.ServiceVersion("v0.1"),
 			semconv.ServiceInstanceID("instance1"),
 		),
@@ -72,6 +72,7 @@ func timeDuration(provider *metric.MeterProvider, sigs chan os.Signal, done chan
 		api.WithInstrumentationVersion("v0.0.1"),
 	)
 
+	// histogram metrics
 	httpDurationsHistogram, _ := meter.Float64Histogram(
 		"http_durations_histogram_seconds",
 		api.WithDescription("Http latency distributions."),
@@ -81,6 +82,9 @@ func timeDuration(provider *metric.MeterProvider, sigs chan os.Signal, done chan
 		attribute.Key("method").String(http.MethodGet),
 		attribute.Key("status").String("200"),
 	)
+
+	// utf8 metric support
+	httpRequstsTotal, _ := meter.Int64Counter("http.requests.total", api.WithDescription("Http requests total"))
 
 	ctx := context.Background()
 
@@ -95,6 +99,8 @@ func timeDuration(provider *metric.MeterProvider, sigs chan os.Signal, done chan
 				elapsed,
 				opt,
 			)
+
+			httpRequstsTotal.Add(ctx, 1, opt)
 		case <-sigs:
 			log.Println("ticker stoping...")
 			done <- struct{}{}

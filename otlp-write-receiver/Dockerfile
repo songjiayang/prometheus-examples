@@ -1,4 +1,4 @@
-FROM golang:alpine3.16 AS builder
+FROM golang:alpine3.20 AS builder
 WORKDIR /build
 ADD go.mod .
 COPY . .
